@@ -289,4 +289,13 @@ class QuantityTest {
 
         Assertions.assertFalse(oneInch.equals(oneGallon));
     }
+
+    @Test
+    void givenOneYardAndOneGallon_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity oneYard = new Quantity(1.0, Unit.yard);
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+
+        Assertions.assertFalse(oneYard.equals(oneGallon));
+    }
+
 }
