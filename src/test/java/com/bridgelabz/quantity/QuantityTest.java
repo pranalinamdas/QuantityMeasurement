@@ -274,4 +274,12 @@ class QuantityTest {
         Assertions.assertFalse(zeroInch.equals(zeroLiter));
     }
 
+    @Test
+    void givenZeroInchAndZeroGallon_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity zeroInch = new Quantity(0.0, Unit.inch);
+        Quantity zeroGallon = new Quantity(0.0, Unit.liters);
+
+        Assertions.assertFalse(zeroInch.equals(zeroGallon));
+    }
+
 }
