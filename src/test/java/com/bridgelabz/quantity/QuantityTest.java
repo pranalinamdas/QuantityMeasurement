@@ -361,4 +361,12 @@ class QuantityTest {
 
         assertEquals(new Quantity(7.56, Unit.liters), oneGallon.add(fourPointSevenEightLiters));
     }
+
+    @Test
+    void givenTwoGallonAndOneLiters_WhenAdd_ThenShouldBeFourPointSevenEightLiters() throws Exception {
+        Quantity zeroGallon = new Quantity(2.0, Unit.gallon);
+        Quantity fourPointSevenEightLiters = new Quantity(3.78, Unit.liters);
+
+        assertEquals(new Quantity(11.34, Unit.liters), zeroGallon.add(fourPointSevenEightLiters));
+    }
 }
