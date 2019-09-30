@@ -278,4 +278,13 @@ class QuantityTest {
         });
     }
 
+    @Test
+    void givenOneFeetAndOneLiter_whenAdd_thenTheyShouldNotBeEqual() throws Exception {
+        Quantity oneFeet = new Quantity(1.0, Unit.gallon);
+        Quantity oneLiter = new Quantity(1.0, Unit.feet);
+
+        Assertions.assertThrows(Exception.class, () -> {
+            oneFeet.add(oneLiter);
+        });
+    }
 }
