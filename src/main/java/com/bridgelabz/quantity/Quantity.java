@@ -17,6 +17,14 @@ public class Quantity {
     }
 
     @Override
+    public String toString() {
+        return "Quantity{" +
+                "value=" + value +
+                ", unit=" + unit +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object other) {
 
         if (this == other) {

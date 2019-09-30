@@ -14,7 +14,7 @@ public enum Unit {
     };
 
     public Unit getBaseUnit(Unit unit){
-        if((unit == Unit.feet) || (unit == Unit.inch) || (unit == Unit.yard)){
+        if(unit == Unit.feet || unit == Unit.inch || unit == Unit.yard){
             return Unit.inch;
         }
         return Unit.liters;

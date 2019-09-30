@@ -121,7 +121,7 @@ class QuantityTest {
         Quantity zeroYard = new Quantity(0, Unit.yard);
         Quantity anotherZeroYard = new Quantity(0, Unit.yard);
 
-        assertEquals(zeroYard, anotherZeroYard);
+        assertTrue(zeroYard.equals(anotherZeroYard));
     }
 
     @Test
@@ -352,5 +352,13 @@ class QuantityTest {
         Assertions.assertThrows(Exception.class, ()->{
             oneGallon.add(oneYard);
         });
+    }
+
+    @Test
+    void givenOneGallonAndOneLiters_WhenAdd_ThenShouldBeFourPointSevenEightLiters() throws Exception {
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+        Quantity fourPointSevenEightLiters = new Quantity(3.78, Unit.liters);
+
+        assertEquals(new Quantity(7.56, Unit.liters), oneGallon.add(fourPointSevenEightLiters));
     }
 }
