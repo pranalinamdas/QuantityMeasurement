@@ -306,4 +306,12 @@ class QuantityTest {
         Assertions.assertFalse(oneYard.equals(oneLiter));
     }
 
+    @Test
+    void givenZeroYardAndZeroLiter_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity zeroYard = new Quantity(0.0, Unit.yard);
+        Quantity zeroLiter = new Quantity(0.0, Unit.liters);
+
+        Assertions.assertFalse(zeroYard.equals(zeroLiter));
+    }
+
 }
