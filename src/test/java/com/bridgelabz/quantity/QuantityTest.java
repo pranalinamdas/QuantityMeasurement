@@ -259,32 +259,19 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroGallonAndZeroFeet_whenAdd_thenTheyShouldThrowException() {
-        Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
-        Quantity zeroFeet = new Quantity(0.0, Unit.feet);
+    void givenOneInchAndOneLiter_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, Unit.inch);
+        Quantity oneLiter = new Quantity(1.0, Unit.liters);
 
-        Assertions.assertThrows(Exception.class, () -> {
-            zeroGallon.add(zeroFeet);
-        });
+        Assertions.assertFalse(oneInch.equals(oneLiter));
     }
 
     @Test
-    void givenOneGallonAndOneInch_whenAdd_thenTheyShouldThrowException() {
-        Quantity zeroGallon = new Quantity(1.0, Unit.gallon);
-        Quantity oneInch = new Quantity(1.0, Unit.feet);
+    void givenZeroInchAndZeroLiter_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity zeroInch = new Quantity(0.0, Unit.inch);
+        Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
-        Assertions.assertThrows(Exception.class, () -> {
-            zeroGallon.add(oneInch);
-        });
+        Assertions.assertFalse(zeroInch.equals(zeroLiter));
     }
 
-    @Test
-    void givenOneFeetAndOneGallon_whenAdd_thenTheyShouldThrowException() {
-        Quantity oneFeet = new Quantity(1.0, Unit.feet);
-        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
-
-        Assertions.assertThrows(Exception.class, () -> {
-            oneFeet.add(oneGallon);
-        });
-    }
 }
