@@ -314,4 +314,14 @@ class QuantityTest {
         Assertions.assertFalse(zeroYard.equals(zeroLiter));
     }
 
+    @Test
+    void givenZeroGallonAndZeroFeet_whenAdd_thenTheyShouldThrowException() {
+        Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
+        Quantity zeroFeet = new Quantity(0.0, Unit.feet);
+
+        Assertions.assertThrows(Exception.class, () -> {
+            zeroGallon.add(zeroFeet);
+        });
+    }
+
 }
