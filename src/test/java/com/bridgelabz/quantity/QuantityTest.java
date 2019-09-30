@@ -343,4 +343,14 @@ class QuantityTest {
             zeroGallon.add(oneInch);
         });
     }
+
+    @Test
+    void givenOneGallonAndOneYard_whenAdd_thenTheyShouldThrowException(){
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+        Quantity oneYard = new Quantity(1.0, Unit.yard);
+
+        Assertions.assertThrows(Exception.class, ()->{
+            oneGallon.add(oneYard);
+        });
+    }
 }
