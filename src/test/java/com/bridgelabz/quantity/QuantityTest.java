@@ -207,7 +207,7 @@ class QuantityTest {
         Quantity zeroLiters = new Quantity(0.0, Unit.liters);
         Quantity anotherZeroLiter = new Quantity(0.0, Unit.liters);
 
-        assertTrue(zeroLiters.equals(anotherZeroLiter));
+        assertEquals(zeroLiters, anotherZeroLiter);
     }
 
     @Test
@@ -215,7 +215,7 @@ class QuantityTest {
         Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
         Quantity anotherZeroGallon = new Quantity(0.0, Unit.gallon);
 
-        assertTrue(zeroGallon.equals(anotherZeroGallon));
+        assertEquals(zeroGallon, anotherZeroGallon);
     }
 
     @Test
@@ -223,7 +223,7 @@ class QuantityTest {
         Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
-        assertTrue(zeroGallon.equals(zeroLiter));
+        assertEquals(zeroGallon, zeroLiter);
     }
 
     @Test
@@ -231,7 +231,7 @@ class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
-        assertFalse(oneGallon.equals(zeroLiter));
+        assertNotEquals(oneGallon, zeroLiter);
     }
 
     @Test
@@ -239,7 +239,7 @@ class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity threePointSevenEightLiter = new Quantity(3.78, Unit.liters);
 
-        assertTrue(oneGallon.equals(threePointSevenEightLiter));
+        assertEquals(oneGallon, threePointSevenEightLiter);
     }
 
     @Test
@@ -255,7 +255,7 @@ class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
 
-        Assertions.assertFalse(oneGallon.equals(oneFeet));
+        assertNotEquals(oneGallon, oneFeet);
     }
 
     @Test
@@ -263,7 +263,7 @@ class QuantityTest {
         Quantity oneInch = new Quantity(1.0, Unit.inch);
         Quantity oneLiter = new Quantity(1.0, Unit.liters);
 
-        Assertions.assertFalse(oneInch.equals(oneLiter));
+        assertNotEquals(oneInch, oneLiter);
     }
 
     @Test
@@ -271,7 +271,7 @@ class QuantityTest {
         Quantity zeroInch = new Quantity(0.0, Unit.inch);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
-        Assertions.assertFalse(zeroInch.equals(zeroLiter));
+        assertNotEquals(zeroInch, zeroLiter);
     }
 
     @Test
@@ -279,7 +279,7 @@ class QuantityTest {
         Quantity zeroInch = new Quantity(0.0, Unit.inch);
         Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
 
-        Assertions.assertFalse(zeroInch.equals(zeroGallon));
+        assertNotEquals(zeroInch, zeroGallon);
     }
 
     @Test
@@ -287,7 +287,7 @@ class QuantityTest {
         Quantity oneInch = new Quantity(1.0, Unit.inch);
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
 
-        Assertions.assertFalse(oneInch.equals(oneGallon));
+        assertNotEquals(oneInch, oneGallon);
     }
 
     @Test
@@ -295,7 +295,7 @@ class QuantityTest {
         Quantity oneYard = new Quantity(1.0, Unit.yard);
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
 
-        Assertions.assertFalse(oneYard.equals(oneGallon));
+        assertNotEquals(oneYard, oneGallon);
     }
 
     @Test
@@ -303,7 +303,7 @@ class QuantityTest {
         Quantity oneYard = new Quantity(1.0, Unit.yard);
         Quantity oneLiter = new Quantity(1.0, Unit.liters);
 
-        Assertions.assertFalse(oneYard.equals(oneLiter));
+        assertNotEquals(oneYard, oneLiter);
     }
 
     @Test
@@ -311,7 +311,7 @@ class QuantityTest {
         Quantity zeroYard = new Quantity(0.0, Unit.yard);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
-        Assertions.assertFalse(zeroYard.equals(zeroLiter));
+        assertNotEquals(zeroYard, zeroLiter);
     }
 
     @Test
@@ -321,6 +321,16 @@ class QuantityTest {
 
         Assertions.assertThrows(Exception.class, () -> {
             zeroGallon.add(zeroFeet);
+        });
+    }
+
+    @Test
+    void givenOneGallonAndOneFeet_whenAdd_thenTheyShouldThrowException() {
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+        Quantity oneFeet = new Quantity(1.0, Unit.feet);
+
+        Assertions.assertThrows(Exception.class, () -> {
+            oneGallon.add(oneFeet);
         });
     }
 
