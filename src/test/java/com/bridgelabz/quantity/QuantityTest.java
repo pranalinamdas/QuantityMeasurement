@@ -277,9 +277,16 @@ class QuantityTest {
     @Test
     void givenZeroInchAndZeroGallon_whenCheckEquality_thenTheyShouldNotBeEqual() {
         Quantity zeroInch = new Quantity(0.0, Unit.inch);
-        Quantity zeroGallon = new Quantity(0.0, Unit.liters);
+        Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
 
         Assertions.assertFalse(zeroInch.equals(zeroGallon));
     }
 
+    @Test
+    void givenOneInchAndOneGallon_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity oneInch = new Quantity(1.0, Unit.inch);
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+
+        Assertions.assertFalse(oneInch.equals(oneGallon));
+    }
 }
