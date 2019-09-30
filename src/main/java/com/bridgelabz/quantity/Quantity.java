@@ -38,10 +38,6 @@ public class Quantity {
         if (unit.getBaseUnit(this.unit) != unit.getBaseUnit(other.unit)) {
             throw new Exception();
         }
-
-        if (this.unit == Unit.feet || this.unit == Unit.inch || this.unit == Unit.yard) {
-            return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.inch);
-        }
-        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.liters);
+        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit(unit));
     }
 }
