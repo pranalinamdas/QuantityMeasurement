@@ -1,11 +1,12 @@
 package com.bridgelabz.quantity;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LengthTest {
+class QuantityTest {
 
     @Nested
     static class FeetTest {
@@ -116,7 +117,7 @@ class LengthTest {
     }
 
     @Test
-    void givenZeroYard_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenZeroYard_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity zeroYard = new Quantity(0, Unit.yard);
         Quantity anotherZeroYard = new Quantity(0, Unit.yard);
 
@@ -124,7 +125,7 @@ class LengthTest {
     }
 
     @Test
-    void givenZeroAndOneYard_whenCheckEquals_thenTheyShouldNotBeEqual(){
+    void givenZeroAndOneYard_whenCheckEquals_thenTheyShouldNotBeEqual() {
         Quantity zeroYard = new Quantity(0, Unit.yard);
         Quantity oneYard = new Quantity(1, Unit.yard);
 
@@ -132,7 +133,7 @@ class LengthTest {
     }
 
     @Test
-    void givenOneAndOneYard_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenOneAndOneYard_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity oneYard = new Quantity(1, Unit.yard);
         Quantity anotherOneYard = new Quantity(1, Unit.yard);
 
@@ -140,69 +141,85 @@ class LengthTest {
     }
 
     @Test
-    void givenOneYardAndThirtySixInches_WhenCheckEquals_ThenTheyShouldBeEqual(){
+    void givenOneYardAndThirtySixInches_WhenCheckEquals_ThenTheyShouldBeEqual() {
         Quantity oneYard = new Quantity(1, Unit.yard);
         Quantity thirtySixInch = new Quantity(36, Unit.inch);
         assertEquals(thirtySixInch, oneYard);
     }
 
     @Test
-    void givenOneYardAndThreeFeet_WhenCheckEquals_ThenTheyShouldBeEqual(){
+    void givenOneYardAndThreeFeet_WhenCheckEquals_ThenTheyShouldBeEqual() {
         Quantity oneYard = new Quantity(1, Unit.yard);
         Quantity threeFeet = new Quantity(3, Unit.feet);
         assertEquals(threeFeet, oneYard);
     }
 
     @Test
-    void givenZeroInchAndZeroInch_whenAdd_ThenShouldBeZeroInch(){
-        Quantity zeroInch = new Quantity(0,Unit.inch);
-        Quantity anotherZeroInch = new Quantity(0,Unit.inch);
+    void givenZeroInchAndZeroInch_whenAdd_ThenShouldBeZeroInch() throws Exception {
+        Quantity zeroInch = new Quantity(0, Unit.inch);
+        Quantity anotherZeroInch = new Quantity(0, Unit.inch);
 
         assertEquals(new Quantity(0, Unit.inch), zeroInch.add(anotherZeroInch));
     }
 
     @Test
-    void givenOneInchAndOneInch_whenAdd_ThenShouldBeTwoInches(){
-        Quantity oneInch = new Quantity(1,Unit.inch);
-        Quantity anotherOneInch = new Quantity(1,Unit.inch);
+    void givenOneInchAndOneInch_whenAdd_ThenShouldBeTwoInches() throws Exception {
+        Quantity oneInch = new Quantity(1, Unit.inch);
+        Quantity anotherOneInch = new Quantity(1, Unit.inch);
 
-        assertEquals(new Quantity(2, Unit.inch), oneInch.add(anotherOneInch));
+        assertEquals(new Quantity(2.0, Unit.inch), oneInch.add(anotherOneInch));
     }
 
     @Test
-    void givenZeroInchAndTwoInch_whenAdd_ThenShouldBeFourInches(){
-        Quantity zeroInch = new Quantity(2,Unit.inch);
-        Quantity oneInch = new Quantity(2,Unit.inch);
+    void givenZeroInchAndTwoInch_whenAdd_ThenShouldBeFourInches() throws Exception {
+        Quantity zeroInch = new Quantity(2, Unit.inch);
+        Quantity oneInch = new Quantity(2, Unit.inch);
 
-        assertEquals(new Quantity(4, Unit.inch), zeroInch.add(oneInch));
+        assertEquals(new Quantity(4.0, Unit.inch), zeroInch.add(oneInch));
     }
 
     @Test
-    void givenZeroInchAndZeroFeet_whenAdd_ThenShouldBeZeroInch(){
-        Quantity zeroFeet = new Quantity(0,Unit.feet);
-        Quantity zeroInch = new Quantity(0,Unit.inch);
+    void givenZeroInchAndZeroFeet_whenAdd_ThenShouldBeZeroInch() throws Exception {
+        Quantity zeroFeet = new Quantity(0, Unit.feet);
+        Quantity zeroInch = new Quantity(0, Unit.inch);
 
         assertEquals(new Quantity(0, Unit.inch), zeroFeet.add(zeroInch));
     }
 
     @Test
-    void givenZeroInchAndOneFeet_whenAdd_ThenShouldBeTwelveInches(){
-        Quantity oneFeet = new Quantity(1,Unit.feet);
-        Quantity zeroInch = new Quantity(0,Unit.inch);
+    void givenZeroInchAndOneFeet_whenAdd_ThenShouldBeTwelveInches() throws Exception {
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        Quantity zeroInch = new Quantity(0, Unit.inch);
 
-        assertEquals(new Quantity(12, Unit.inch), oneFeet.add(zeroInch));
+        assertEquals(new Quantity(12.0, Unit.inch), oneFeet.add(zeroInch));
     }
 
     @Test
-    void givenTwoInchAndOneFeet_whenAdd_ThenShouldBeFourteenInches(){
-        Quantity oneFeet = new Quantity(1,Unit.feet);
-        Quantity twoInches = new Quantity(2,Unit.inch);
+    void givenTwoInchAndOneFeet_whenAdd_ThenShouldBeFourteenInches() throws Exception {
+        Quantity oneFeet = new Quantity(1, Unit.feet);
+        Quantity twoInches = new Quantity(2, Unit.inch);
 
-        assertEquals(new Quantity(14, Unit.inch), oneFeet.add(twoInches));
+        assertEquals(new Quantity(14.0, Unit.inch), oneFeet.add(twoInches));
     }
 
     @Test
-    void givenZeroGallonAndZeroLiters_WhenCheckEquals_ThenShouldBeEqual(){
+    void givenZeroLitersAndZeroLiters_WhenCheckEquals_ThenShouldBeEqual() {
+        Quantity zeroLiters = new Quantity(0.0, Unit.liters);
+        Quantity anotherZeroLiter = new Quantity(0.0, Unit.liters);
+
+        assertTrue(zeroLiters.equals(anotherZeroLiter));
+    }
+
+    @Test
+    void givenZeroGallonAndZeroGallon_WhenCheckEquals_ThenShouldBeEqual() {
+        Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
+        Quantity anotherZeroGallon = new Quantity(0.0, Unit.gallon);
+
+        assertTrue(zeroGallon.equals(anotherZeroGallon));
+    }
+
+    @Test
+    void givenZeroGallonAndZeroLiters_WhenCheckEquals_ThenShouldBeEqual() {
         Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
@@ -210,7 +227,7 @@ class LengthTest {
     }
 
     @Test
-    void givenOneGallonAndZeroLiters_WhenCheckEquals_ThenShouldNotBeEqual(){
+    void givenOneGallonAndZeroLiters_WhenCheckEquals_ThenShouldNotBeEqual() {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
@@ -218,12 +235,26 @@ class LengthTest {
     }
 
     @Test
-    void givenOneGallonAndThreePointSevenEightLiters_WhenCheckEquals_ThenShouldNotBeEqual(){
+    void givenOneGallonAndThreePointSevenEightLiters_WhenCheckEquals_ThenShouldNotBeEqual() {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity threePointSevenEightLiter = new Quantity(3.78, Unit.liters);
 
         assertTrue(oneGallon.equals(threePointSevenEightLiter));
     }
 
-}
+    @Test
+    void givenZeroGallonAndZeroLiters_WhenAdd_ThenShouldBeZeroLiters() throws Exception {
+        Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
+        Quantity zeroLiter = new Quantity(0.0, Unit.liters);
 
+        assertEquals(new Quantity(0, Unit.liters), zeroGallon.add(zeroLiter));
+    }
+
+    @Test
+    void givenOneGallonAndOneFeet_whenCheckEquality_thenTheyShouldNotBeEqual() {
+        Quantity oneGallon = new Quantity(1.0, Unit.gallon);
+        Quantity oneFeet = new Quantity(1.0, Unit.feet);
+
+        Assertions.assertFalse(oneGallon.equals(oneFeet));
+    }
+}

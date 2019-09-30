@@ -25,7 +25,6 @@ public class Quantity {
             Quantity length = (Quantity) other;
             return unit.convertToBase(this.value) == length.unit.convertToBase(length.value);
         }
-
         return false;
     }
 
