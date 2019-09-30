@@ -334,4 +334,13 @@ class QuantityTest {
         });
     }
 
+    @Test
+    void givenOneGallonAndOneInch_whenAdd_thenTheyShouldThrowException() {
+        Quantity zeroGallon = new Quantity(1.0, Unit.gallon);
+        Quantity oneInch = new Quantity(1.0, Unit.inch);
+
+        Assertions.assertThrows(Exception.class, () -> {
+            zeroGallon.add(oneInch);
+        });
+    }
 }

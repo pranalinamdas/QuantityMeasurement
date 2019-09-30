@@ -33,7 +33,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) throws Exception {
 
-        if(unit.getBaseUnit(this.unit) != unit.getBaseUnit(other.unit)){
+        if (unit.getBaseUnit(this.unit) != unit.getBaseUnit(other.unit)) {
             throw new Exception();
         }
 
