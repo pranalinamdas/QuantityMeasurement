@@ -23,9 +23,11 @@ public class Quantity {
             return true;
         }
         if (other instanceof Quantity) {
-            Quantity length = (Quantity) other;
-            if (unit.getBaseUnit(this.unit) == unit.getBaseUnit(length.unit)) {
-                return unit.convertToBase(this.value) == length.unit.convertToBase(length.value);
+
+            Quantity quantity = (Quantity) other;
+
+            if (unit.getBaseUnit(this.unit) == unit.getBaseUnit(quantity.unit)) {
+                return unit.convertToBase(this.value) == quantity.unit.convertToBase(quantity.value);
             }
         }
         return false;

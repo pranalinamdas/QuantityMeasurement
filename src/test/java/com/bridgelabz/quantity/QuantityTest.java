@@ -121,7 +121,7 @@ class QuantityTest {
         Quantity zeroYard = new Quantity(0, Unit.yard);
         Quantity anotherZeroYard = new Quantity(0, Unit.yard);
 
-        assertTrue(zeroYard.equals(anotherZeroYard));
+        assertEquals(zeroYard, anotherZeroYard);
     }
 
     @Test
@@ -129,7 +129,7 @@ class QuantityTest {
         Quantity zeroYard = new Quantity(0, Unit.yard);
         Quantity oneYard = new Quantity(1, Unit.yard);
 
-        assertFalse(zeroYard.equals(oneYard));
+        assertNotEquals(zeroYard, oneYard);
     }
 
     @Test
