@@ -30,9 +30,9 @@ public class Quantity {
 
     public Quantity add(Quantity other) throws Exception {
 
-        if ((this.unit == Unit.gallon) && (other.unit == Unit.feet)) {
-            throw new Exception();
-        }
+        if ((this.unit == Unit.gallon) && (other.unit == Unit.feet)) throw new Exception();
+
+        if ((this.unit == Unit.feet) && (other.unit == Unit.gallon)) throw new Exception();
 
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), Unit.inch);
     }
