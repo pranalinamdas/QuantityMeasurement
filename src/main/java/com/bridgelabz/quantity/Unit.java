@@ -11,10 +11,10 @@ public enum Unit {
 
     public double convertToBase(double value) {
         return value * converter;
-    };
+    }
 
-    public Unit getBaseUnit(Unit unit){
-        if(unit == Unit.feet || unit == Unit.inch || unit == Unit.yard){
+    public Unit getBaseUnit(Unit unit) {
+        if (unit == Unit.feet || unit == Unit.inch || unit == Unit.yard) {
             return Unit.inch;
         }
         return Unit.liters;

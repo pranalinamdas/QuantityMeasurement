@@ -1,6 +1,5 @@
 package com.bridgelabz.quantity;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -113,7 +112,7 @@ class QuantityTest {
         Quantity oneFoot = new Quantity(1, Unit.feet);
         Quantity twelveInch = new Quantity(12, Unit.inch);
 
-        assertEquals(twelveInch, oneFoot);
+        assertEquals(oneFoot, twelveInch);
     }
 
     @Test
@@ -319,7 +318,7 @@ class QuantityTest {
         Quantity zeroGallon = new Quantity(0.0, Unit.gallon);
         Quantity zeroFeet = new Quantity(0.0, Unit.feet);
 
-        Assertions.assertThrows(Exception.class, () -> {
+        assertThrows(Exception.class, () -> {
             zeroGallon.add(zeroFeet);
         });
     }
@@ -329,7 +328,7 @@ class QuantityTest {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity oneFeet = new Quantity(1.0, Unit.feet);
 
-        Assertions.assertThrows(Exception.class, () -> {
+        assertThrows(Exception.class, () -> {
             oneGallon.add(oneFeet);
         });
     }
@@ -339,17 +338,17 @@ class QuantityTest {
         Quantity zeroGallon = new Quantity(1.0, Unit.gallon);
         Quantity oneInch = new Quantity(1.0, Unit.inch);
 
-        Assertions.assertThrows(Exception.class, () -> {
+        assertThrows(Exception.class, () -> {
             zeroGallon.add(oneInch);
         });
     }
 
     @Test
-    void givenOneGallonAndOneYard_whenAdd_thenTheyShouldThrowException(){
+    void givenOneGallonAndOneYard_whenAdd_thenTheyShouldThrowException() {
         Quantity oneGallon = new Quantity(1.0, Unit.gallon);
         Quantity oneYard = new Quantity(1.0, Unit.yard);
 
-        Assertions.assertThrows(Exception.class, ()->{
+        assertThrows(Exception.class, () -> {
             oneGallon.add(oneYard);
         });
     }

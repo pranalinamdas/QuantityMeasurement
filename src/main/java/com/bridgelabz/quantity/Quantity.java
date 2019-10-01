@@ -34,8 +34,8 @@ public class Quantity {
 
             Quantity quantity = (Quantity) other;
 
-            if (unit.getBaseUnit(this.unit) == unit.getBaseUnit(quantity.unit)) {
-                return unit.convertToBase(this.value) == quantity.unit.convertToBase(quantity.value);
+            if (unit.getBaseUnit(this.unit) == quantity.unit.getBaseUnit(quantity.unit)) {
+                return Math.abs(unit.convertToBase(this.value) - quantity.unit.convertToBase(quantity.value)) <= 0.01;
             }
         }
         return false;
