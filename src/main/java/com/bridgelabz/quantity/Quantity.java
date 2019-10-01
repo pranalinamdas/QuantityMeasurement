@@ -4,24 +4,24 @@ public class Quantity {
     private double value;
     Unit unit;
 
-    public static Quantity createFeet(double value){
-        return QuantityFactory.createFeet(value);
+    public static Quantity createFeet(double value) {
+        return new Quantity(value, Unit.feet);
     }
 
-    public static Quantity createInch(double value){
-        return QuantityFactory.createInch(value);
+    public static Quantity createInch(double value) {
+        return new Quantity(value, Unit.inch);
     }
 
-    public static Quantity createYard(double value){
-        return QuantityFactory.createYard(value);
+    public static Quantity createYard(double value) {
+        return new Quantity(value, Unit.yard);
     }
 
-    public static Quantity createLiter(double value){
-        return QuantityFactory.createLiters(value);
+    public static Quantity createLiter(double value) {
+        return new Quantity(value, Unit.liters);
     }
 
-    public static Quantity createGallon(double value){
-        return QuantityFactory.createGallon(value);
+    public static Quantity createGallon(double value) {
+        return new Quantity(value, Unit.gallon);
     }
 
     public Quantity(double value, Unit unit) {

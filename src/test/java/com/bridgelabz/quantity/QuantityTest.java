@@ -204,7 +204,7 @@ class QuantityTest {
 
     @Test
     void givenZeroGallonAndZeroGallon_WhenCheckEquals_ThenShouldBeEqual() {
-        Quantity zeroGallon =Quantity.createGallon(0);
+        Quantity zeroGallon = Quantity.createGallon(0);
         Quantity anotherZeroGallon = Quantity.createGallon(0);
 
         assertEquals(zeroGallon, anotherZeroGallon);
@@ -228,7 +228,7 @@ class QuantityTest {
 
     @Test
     void givenOneGallonAndThreePointSevenEightLiters_WhenCheckEquals_ThenShouldNotBeEqual() {
-        Quantity oneGallon =Quantity.createGallon(1);
+        Quantity oneGallon = Quantity.createGallon(1);
         Quantity threePointSevenEightLiter = Quantity.createLiter(3.78);
 
         assertEquals(oneGallon, threePointSevenEightLiter);
@@ -319,7 +319,7 @@ class QuantityTest {
 
     @Test
     void givenOneGallonAndOneFeet_whenAdd_thenTheyShouldThrowException() {
-        Quantity oneGallon =Quantity.createGallon(1);
+        Quantity oneGallon = Quantity.createGallon(1);
         Quantity oneFeet = Quantity.createFeet(1);
 
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
