@@ -2,16 +2,24 @@ package com.bridgelabz.quantity;
 
 public class QuantityFactory {
 
-    public static Quantity createFeet(double value){
+    static Quantity createFeet(double value){
         return new Quantity(value, Unit.feet);
     }
 
-    public static Quantity createInch(double value){
+    static Quantity createInch(double value){
         return new Quantity(value, Unit.inch);
     }
 
-    public static Quantity createYard(double value){
+    static Quantity createYard(double value){
         return new Quantity(value, Unit.yard);
+    }
+
+    public static Quantity createLiters(double value){
+        return new Quantity(value, Unit.liters);
+    }
+
+    public static Quantity createGallon(double value){
+        return new Quantity(value, Unit.gallon);
     }
 
 }

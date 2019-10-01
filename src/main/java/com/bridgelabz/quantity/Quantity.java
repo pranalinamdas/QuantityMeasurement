@@ -16,6 +16,14 @@ public class Quantity {
         return QuantityFactory.createYard(value);
     }
 
+    public static Quantity createLiter(double value){
+        return QuantityFactory.createLiters(value);
+    }
+
+    public static Quantity createGallon(double value){
+        return QuantityFactory.createGallon(value);
+    }
+
     public Quantity(double value, Unit unit) {
         this.unit = unit;
         this.value = value;
