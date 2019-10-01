@@ -12,6 +12,7 @@ public enum Unit {
 
     Unit(double converter) {
         this.converter = converter;
+        this.baseUnit = this;
     }
 
     Unit(double converter, Unit baseUnit) {
@@ -23,14 +24,11 @@ public enum Unit {
         return value * converter;
     }
 
-    public Unit getBaseUnit(Unit unit) {
-        if (unit == Unit.feet || unit == Unit.inch || unit == Unit.yard) {
-            return Unit.inch;
-        }
-        return Unit.liters;
+    public Unit getBaseUnit() {
+        return this.baseUnit;
     }
 
     public boolean hasSameBaseUnits(Quantity quantity) {
-        return getBaseUnit(this) == getBaseUnit(quantity.unit);
+        return this.getBaseUnit() == quantity.unit.getBaseUnit();
     }
 }

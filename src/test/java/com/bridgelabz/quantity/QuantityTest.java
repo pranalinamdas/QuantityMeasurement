@@ -100,7 +100,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenTwoFeetAndTwelveInch_whenCheckEquals_thenShouldBeEqual() {
+    void givenTwoFeetAndTwentyFourInches_whenCheckEquals_thenShouldBeEqual() {
         Quantity twoFeet = new Quantity(2, Unit.feet);
         Quantity twelveInch = new Quantity(24, Unit.inch);
 

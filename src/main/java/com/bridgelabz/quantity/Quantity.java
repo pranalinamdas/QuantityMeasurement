@@ -46,6 +46,6 @@ public class Quantity {
         if (!unit.hasSameBaseUnits(other)) {
             throw new Exception();
         }
-        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit(unit));
+        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit());
     }
 }
