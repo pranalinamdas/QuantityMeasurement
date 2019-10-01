@@ -34,7 +34,7 @@ public class Quantity {
 
             Quantity quantity = (Quantity) other;
 
-            if (unit.checkBaseUnit(quantity)) {
+            if (unit.hasSameBaseUnits(quantity)) {
                 return Math.abs(unit.convertToBase(this.value) - quantity.unit.convertToBase(quantity.value)) <= 0.01;
             }
         }
@@ -43,7 +43,7 @@ public class Quantity {
 
     public Quantity add(Quantity other) throws Exception {
 
-        if (unit.getBaseUnit(this.unit) != unit.getBaseUnit(other.unit)) {
+        if (!unit.hasSameBaseUnits(other)) {
             throw new Exception();
         }
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit(unit));
