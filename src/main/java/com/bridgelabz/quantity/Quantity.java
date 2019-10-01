@@ -1,8 +1,8 @@
 package com.bridgelabz.quantity;
 
 public class Quantity {
-    private double value;
-    private Unit unit;
+    protected double value;
+    protected Unit unit;
 
 
 /*
@@ -34,7 +34,7 @@ public class Quantity {
 
             Quantity quantity = (Quantity) other;
 
-            if (unit.getBaseUnit(this.unit) == quantity.unit.getBaseUnit(quantity.unit)) {
+            if (unit.checkBaseUnit(quantity)) {
                 return Math.abs(unit.convertToBase(this.value) - quantity.unit.convertToBase(quantity.value)) <= 0.01;
             }
         }

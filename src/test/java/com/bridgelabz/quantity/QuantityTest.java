@@ -26,7 +26,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenOneAndOneFeet_WhenCheckEquals_ThenShouldNotBeEqual() {
+        void givenOneAndOneFeet_WhenCheckEquals_ThenShouldBeEqual() {
             Quantity one = new Quantity(1, Unit.feet);
             Quantity anotherOne = new Quantity(1, Unit.feet);
 

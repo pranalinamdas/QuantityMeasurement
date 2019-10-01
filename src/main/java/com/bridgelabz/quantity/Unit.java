@@ -19,4 +19,11 @@ public enum Unit {
         }
         return Unit.liters;
     }
+
+    public boolean checkBaseUnit(Quantity quantity){
+        if(getBaseUnit(this) == getBaseUnit(quantity.unit)){
+            return true;
+        }
+        return  false;
+    }
 }
