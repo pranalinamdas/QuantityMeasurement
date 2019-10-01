@@ -1,15 +1,20 @@
 package com.bridgelabz.quantity;
 
 public class Quantity {
-    protected double value;
-    protected Unit unit;
+    private double value;
+    Unit unit;
 
-
-/*
-    public static Length createFoot(int value) {
-        return new Length(value, Unit.feet);
+    public static Quantity createFeet(double value){
+        return QuantityFactory.createFeet(value);
     }
-*/
+
+    public static Quantity createInch(double value){
+        return QuantityFactory.createInch(value);
+    }
+
+    public static Quantity createYard(double value){
+        return QuantityFactory.createYard(value);
+    }
 
     public Quantity(double value, Unit unit) {
         this.unit = unit;
@@ -44,7 +49,7 @@ public class Quantity {
     public Quantity add(Quantity other) throws Exception {
 
         if (!unit.hasSameBaseUnits(other)) {
-            throw new Exception();
+            throw new IllegalArgumentException(this.unit + " Cannot be added with " + other.unit);
         }
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit());
     }
