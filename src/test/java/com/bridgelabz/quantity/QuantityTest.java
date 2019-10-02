@@ -382,4 +382,13 @@ class QuantityTest {
 
         assertNotEquals(zeroGram, oneGram);
     }
+
+    @Test
+    void givenZeroGramsAndZeroKiloGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+        Quantity zeroGram = Quantity.createGrams(0);
+        Quantity zeroKG = Quantity.createKiloGrams(0);
+
+        assertEquals(zeroGram, zeroKG);
+
+    }
 }
