@@ -414,4 +414,13 @@ class QuantityTest {
 
         assertNotEquals(zeroKG, oneKG);
     }
+
+
+    @Test
+    void givenZeroGramsAndZeroGrams_whenAdd_thenShouldBeZero() throws Exception {
+        Quantity zeroGram = Quantity.createGrams(0);
+        Quantity anotherZeroGram = Quantity.createGrams(0);
+
+        assertEquals(Quantity.createGrams(0.0), zeroGram.add(anotherZeroGram));
+    }
 }
