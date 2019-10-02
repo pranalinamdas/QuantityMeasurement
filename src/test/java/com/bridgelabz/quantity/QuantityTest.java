@@ -462,4 +462,12 @@ class QuantityTest {
 
         assertNotEquals(zeroCelsius, oneCelsius);
     }
+
+    @Test
+    void givenOneCelsiusAndOneCelsius_whenCheckEquals_ThenShouldBeEqual(){
+        Quantity oneCelsius = Quantity.createCelsius(1);
+        Quantity anotherOneCelsius = Quantity.createCelsius(1);
+
+        assertEquals(oneCelsius, anotherOneCelsius);
+    }
 }
