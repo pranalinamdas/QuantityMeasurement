@@ -519,4 +519,12 @@ class QuantityTest {
         assertNotEquals(zeroCelsius, thirtyTwoFahrenheit);
     }
 
+    @Test
+    void givenOneCelsiusAndThirtyThreePointEightFahrenheit_whenCheckEquals_ThenShouldBeEqual(){
+        Quantity oneCelsius = Quantity.createCelsius(1);
+        Quantity thirtyThreePointEightFahrenheit = Quantity.createFahrenheit(33.8);
+
+        assertNotEquals(oneCelsius, thirtyThreePointEightFahrenheit);
+    }
+
 }
