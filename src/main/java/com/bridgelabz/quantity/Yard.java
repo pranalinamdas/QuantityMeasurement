@@ -1,8 +1,8 @@
 package com.bridgelabz.quantity;
 
-public class Feet implements IUnit {
+public class Yard implements IUnit {
 
-    private final double converter = 12;
+    private final double converter = 36;
 
     @Override
     public double convertToBase(double value) {
@@ -15,17 +15,17 @@ public class Feet implements IUnit {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return obj instanceof Feet;
-    }
-
-    @Override
     public boolean hasSameBaseUnits(Quantity quantity) {
         return getBaseUnit().equals(quantity.getBaseUnit());
     }
 
     @Override
+    public boolean equals(Object obj) {
+        return obj instanceof Yard;
+    }
+
+    @Override
     public String toString() {
-        return "Feet";
+        return "Yard";
     }
 }

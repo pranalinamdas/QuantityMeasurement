@@ -2,31 +2,31 @@ package com.bridgelabz.quantity;
 
 public class Quantity {
     private double value;
-    Unit unit;
+    IUnit unit;
 
     public static Quantity createFeet(double value) {
-        return new Quantity(value, Unit.feet);
+        return new Quantity(value, new Feet());
     }
 
     public static Quantity createInch(double value) {
-        return new Quantity(value, Unit.inch);
+        return new Quantity(value, new Inch());
     }
 
     public static Quantity createYard(double value) {
-        return new Quantity(value, Unit.yard);
+        return new Quantity(value, new Yard());
     }
 
     public static Quantity createLiter(double value) {
-        return new Quantity(value, Unit.liters);
+        return new Quantity(value, new Liter());
     }
 
     public static Quantity createGallon(double value) {
-        return new Quantity(value, Unit.gallon);
+        return new Quantity(value, new Gallon());
     }
 
-    public Quantity(double value, Unit unit) {
-        this.unit = unit;
+    public Quantity(double value, IUnit unit) {
         this.value = value;
+        this.unit = unit;
     }
 
     @Override
@@ -60,5 +60,9 @@ public class Quantity {
             throw new IllegalArgumentException(this.unit + " Cannot be added with " + other.unit);
         }
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit());
+    }
+
+    IUnit getBaseUnit() {
+        return unit.getBaseUnit();
     }
 }

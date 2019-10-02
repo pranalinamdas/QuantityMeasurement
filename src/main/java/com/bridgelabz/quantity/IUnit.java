@@ -4,7 +4,7 @@ public interface IUnit {
 
     double convertToBase(double value);
 
-    Unit getBaseUnit();
+    IUnit getBaseUnit();
 
     boolean hasSameBaseUnits(Quantity quantity);
 

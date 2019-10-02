@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class QuantityTest {
 
     @Nested
-    static class FeetTest {
+    class FeetTest {
         @Test
         void givenZeroFeet_whenCheckEquals_thenShouldReturnEqual() {
             Quantity zero = Quantity.createFeet(0);
@@ -25,7 +25,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenOneAndOneFeet_WhenCheckEquals_ThenShouldBeEqual() {
+        void givenOneFeetAndOneFeet_WhenCheckEquals_ThenShouldBeEqual() {
             Quantity one = Quantity.createFeet(1);
             Quantity anotherOne = Quantity.createFeet(1);
 
@@ -33,7 +33,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenZeroAndNull_WhenCheckEquals_ThenShouldNotBeEqual() {
+        void givenZeroFeetAndNull_WhenCheckEquals_ThenShouldNotBeEqual() {
             Quantity zero = Quantity.createFeet(0);
 
             assertNotEquals(null, zero);
@@ -41,7 +41,7 @@ class QuantityTest {
     }
 
     @Nested
-    static class InchTest {
+    class InchTest {
         @Test
         void givenZeroInch_whenCheckEquals_thenShouldBeEqual() {
             Quantity zero = Quantity.createInch(0);
@@ -51,7 +51,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenZeroAndOneInch_whenCheckEquals_thenShouldNotBeEqual() {
+        void givenZeroInchAndOneInch_whenCheckEquals_thenShouldNotBeEqual() {
             Quantity zero = Quantity.createInch(0);
             Quantity one = Quantity.createInch(1);
 
@@ -59,7 +59,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenOneAndOneFeet_WhenCheckEquals_ThenShouldNotBeEqual() {
+        void givenOneFeetAndOneInch_WhenCheckEquals_ThenShouldNotBeEqual() {
             Quantity one = Quantity.createInch(1);
             Quantity anotherOne = Quantity.createInch(1);
 
@@ -67,7 +67,7 @@ class QuantityTest {
         }
 
         @Test
-        void givenZeroAndNull_whenCheckEquals_thenShouldNotBeEqual() {
+        void givenZeroInchAndNull_whenCheckEquals_thenShouldNotBeEqual() {
             Quantity zero = Quantity.createInch(0);
 
             assertNotEquals(null, zero);
@@ -314,7 +314,7 @@ class QuantityTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             zeroGallon.add(zeroFeet);
         });
-        assertEquals("gallon Cannot be added with feet", exception.getMessage());
+        assertEquals("Gallon Cannot be added with Feet", exception.getMessage());
     }
 
     @Test
@@ -325,7 +325,7 @@ class QuantityTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             oneGallon.add(oneFeet);
         });
-        assertEquals("gallon Cannot be added with feet", exception.getMessage());
+        assertEquals("Gallon Cannot be added with Feet", exception.getMessage());
 
     }
 
@@ -337,7 +337,7 @@ class QuantityTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             zeroGallon.add(oneInch);
         });
-        assertEquals("gallon Cannot be added with inch", exception.getMessage());
+        assertEquals("Gallon Cannot be added with Inch", exception.getMessage());
     }
 
     @Test
@@ -348,7 +348,7 @@ class QuantityTest {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             oneGallon.add(oneYard);
         });
-        assertEquals("gallon Cannot be added with yard", exception.getMessage());
+        assertEquals("Gallon Cannot be added with Yard", exception.getMessage());
     }
 
     @Test
