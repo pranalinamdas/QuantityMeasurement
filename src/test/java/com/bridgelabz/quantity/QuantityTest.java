@@ -431,4 +431,12 @@ class QuantityTest {
 
         assertEquals(Quantity.createGrams(2.0), oneGram.add(anotherOneGram));
     }
+
+    @Test
+    void givenOneGramAndOneKiloGrams_whenAdd_thenShouldBeThousandAndOne() throws Exception {
+        Quantity thousandGrams = Quantity.createGrams(1);
+        Quantity oneKG = Quantity.createKiloGrams(1);
+
+        assertEquals(Quantity.createGrams(1001), thousandGrams.add(oneKG));
+    }
 }
