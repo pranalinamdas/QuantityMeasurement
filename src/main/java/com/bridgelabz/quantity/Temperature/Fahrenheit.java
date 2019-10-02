@@ -5,7 +5,7 @@ import com.bridgelabz.quantity.Quantity;
 
 public class Fahrenheit implements IUnit {
 
-    private final double converter = 32;
+    private final double converter = 1;
 
     @Override
     public double convertToBase(double value) {
