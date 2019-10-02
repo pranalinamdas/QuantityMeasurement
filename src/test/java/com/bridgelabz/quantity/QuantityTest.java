@@ -368,7 +368,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroGramsAndZeroGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenZeroGramsAndZeroGrams_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity zeroGram = Quantity.createGrams(0);
         Quantity anotherZeroGram = Quantity.createGrams(0);
 
@@ -376,7 +376,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroGramsAndOneGram_whenCheckEquals_thenTheyShouldBeNotEqual(){
+    void givenZeroGramsAndOneGram_whenCheckEquals_thenTheyShouldBeNotEqual() {
         Quantity zeroGram = Quantity.createGrams(0);
         Quantity oneGram = Quantity.createGrams(1);
 
@@ -384,7 +384,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroGramsAndZeroKiloGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenZeroGramsAndZeroKiloGrams_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity zeroGram = Quantity.createGrams(0);
         Quantity zeroKG = Quantity.createKiloGrams(0);
 
@@ -392,7 +392,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenThousandGramsAndOneKiloGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenThousandGramsAndOneKiloGrams_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity thousandGrams = Quantity.createGrams(1000);
         Quantity oneKG = Quantity.createKiloGrams(1);
 
@@ -400,7 +400,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroKiloGramsAndZeroKiloGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+    void givenZeroKiloGramsAndZeroKiloGrams_whenCheckEquals_thenTheyShouldBeEqual() {
         Quantity zeroKG = Quantity.createKiloGrams(0);
         Quantity anotherZeroKG = Quantity.createKiloGrams(0);
 
@@ -408,7 +408,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenZeroKiloGramsAndOneKiloGrams_whenCheckEquals_thenTheyShouldBeNotEqual(){
+    void givenZeroKiloGramsAndOneKiloGrams_whenCheckEquals_thenTheyShouldBeNotEqual() {
         Quantity zeroKG = Quantity.createKiloGrams(0);
         Quantity oneKG = Quantity.createKiloGrams(1);
 
@@ -445,5 +445,13 @@ class QuantityTest {
         Quantity anotherOneKG = Quantity.createKiloGrams(1);
 
         assertEquals(Quantity.createGrams(2000), oneKG.add(anotherOneKG));
+    }
+
+    @Test
+    void givenZeroCelsiusAndZeroCelsius_whenCheckEquals_ThenShouldBeEqual(){
+        Quantity zeroCelsius = Quantity.createCelsius(0);
+        Quantity anotherZeroCelsius = Quantity.createCelsius(0);
+
+        assertEquals(zeroCelsius, anotherZeroCelsius);
     }
 }

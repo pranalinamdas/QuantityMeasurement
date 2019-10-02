@@ -3,6 +3,8 @@ package com.bridgelabz.quantity;
 import com.bridgelabz.quantity.Length.Feet;
 import com.bridgelabz.quantity.Length.Inch;
 import com.bridgelabz.quantity.Length.Yard;
+import com.bridgelabz.quantity.Temperature.Celsius;
+import com.bridgelabz.quantity.Temperature.Fahrenheit;
 import com.bridgelabz.quantity.Volume.Gallon;
 import com.bridgelabz.quantity.Volume.Liter;
 import com.bridgelabz.quantity.Weight.Grams;
@@ -32,12 +34,20 @@ public class Quantity {
         return new Quantity(value, new Gallon());
     }
 
-    public static Quantity createGrams(double value){
+    public static Quantity createGrams(double value) {
         return new Quantity(value, new Grams());
     }
 
     public static Quantity createKiloGrams(double value) {
         return new Quantity(value, new KiloGrams());
+    }
+
+    public static Quantity createCelsius(double value){
+        return new Quantity(value, new Celsius());
+    }
+
+    public static  Quantity createFahrenheit(double value){
+        return new Quantity(value, new Fahrenheit());
     }
 
     public Quantity(double value, IUnit unit) {
