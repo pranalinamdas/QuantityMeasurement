@@ -415,9 +415,8 @@ class QuantityTest {
         assertNotEquals(zeroKG, oneKG);
     }
 
-
     @Test
-    void givenZeroGramsAndZeroGrams_whenAdd_thenShouldBeZero() throws Exception {
+    void givenZeroGramsAndZeroGrams_whenAdd_thenShouldBeZeroGrams() throws Exception {
         Quantity zeroGram = Quantity.createGrams(0);
         Quantity anotherZeroGram = Quantity.createGrams(0);
 
@@ -425,7 +424,7 @@ class QuantityTest {
     }
 
     @Test
-    void givenOneGramsAndOneGrams_whenAdd_thenShouldBeTwo() throws Exception {
+    void givenOneGramsAndOneGrams_whenAdd_thenShouldBeTwoGrams() throws Exception {
         Quantity oneGram = Quantity.createGrams(1);
         Quantity anotherOneGram = Quantity.createGrams(1);
 
@@ -433,10 +432,18 @@ class QuantityTest {
     }
 
     @Test
-    void givenOneGramAndOneKiloGrams_whenAdd_thenShouldBeThousandAndOne() throws Exception {
-        Quantity thousandGrams = Quantity.createGrams(1);
+    void givenOneGramAndOneKiloGrams_whenAdd_thenShouldBeThousandAndOneGrams() throws Exception {
+        Quantity oneGram = Quantity.createGrams(1);
         Quantity oneKG = Quantity.createKiloGrams(1);
 
-        assertEquals(Quantity.createGrams(1001), thousandGrams.add(oneKG));
+        assertEquals(Quantity.createGrams(1001), oneGram.add(oneKG));
+    }
+
+    @Test
+    void givenOneKiloGramAndOneKiloGrams_whenAdd_thenShouldBetwoThousandGrams() throws Exception {
+        Quantity oneKG = Quantity.createKiloGrams(1);
+        Quantity anotherOneKG = Quantity.createKiloGrams(1);
+
+        assertEquals(Quantity.createGrams(2000), oneKG.add(anotherOneKG));
     }
 }
