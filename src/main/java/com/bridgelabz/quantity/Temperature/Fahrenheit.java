@@ -13,8 +13,8 @@ public class Fahrenheit implements IUnit {
     }
 
     @Override
-    public Celsius getBaseUnit() {
-        return new Celsius();
+    public Fahrenheit getBaseUnit() {
+        return new Fahrenheit();
     }
 
     @Override
