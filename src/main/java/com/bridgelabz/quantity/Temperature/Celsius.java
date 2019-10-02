@@ -7,7 +7,7 @@ public class Celsius implements IUnit {
 
     @Override
     public double convertToBase(double value) {
-        return value * (9 / 5) + 32;
+        return value * (9.0 / 5) + 32;
     }
 
     @Override

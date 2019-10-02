@@ -7,5 +7,4 @@ public interface IUnit {
     IUnit getBaseUnit();
 
     boolean hasSameBaseUnits(Quantity quantity);
-
 }

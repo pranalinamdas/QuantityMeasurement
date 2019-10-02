@@ -1,53 +1,22 @@
 package com.bridgelabz.quantity;
 
-import com.bridgelabz.quantity.Length.Feet;
-import com.bridgelabz.quantity.Length.Inch;
-import com.bridgelabz.quantity.Length.Yard;
 import com.bridgelabz.quantity.Temperature.Celsius;
 import com.bridgelabz.quantity.Temperature.Fahrenheit;
-import com.bridgelabz.quantity.Volume.Gallon;
-import com.bridgelabz.quantity.Volume.Liter;
-import com.bridgelabz.quantity.Weight.Grams;
-import com.bridgelabz.quantity.Weight.KiloGrams;
 
 public class Quantity {
-    private double value;
-    IUnit unit;
 
-    public static Quantity createFeet(double value) {
-        return new Quantity(value, new Feet());
-    }
+    protected double value;
+    protected IUnit unit;
 
-    public static Quantity createInch(double value) {
-        return new Quantity(value, new Inch());
-    }
-
-    public static Quantity createYard(double value) {
-        return new Quantity(value, new Yard());
-    }
-
-    public static Quantity createLiter(double value) {
-        return new Quantity(value, new Liter());
-    }
-
-    public static Quantity createGallon(double value) {
-        return new Quantity(value, new Gallon());
-    }
-
-    public static Quantity createGrams(double value) {
-        return new Quantity(value, new Grams());
-    }
-
-    public static Quantity createKiloGrams(double value) {
-        return new Quantity(value, new KiloGrams());
-    }
-
-    public static Quantity createCelsius(double value){
+    public static Quantity createCelsius(double value) {
         return new Quantity(value, new Celsius());
     }
 
-    public static  Quantity createFahrenheit(double value){
+    public static Quantity createFahrenheit(double value) {
         return new Quantity(value, new Fahrenheit());
+    }
+
+    public Quantity() {
     }
 
     public Quantity(double value, IUnit unit) {
@@ -78,14 +47,6 @@ public class Quantity {
             }
         }
         return false;
-    }
-
-    public Quantity add(Quantity other) throws Exception {
-
-        if (!unit.hasSameBaseUnits(other)) {
-            throw new IllegalArgumentException(this.unit + " Cannot be added with " + other.unit);
-        }
-        return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit());
     }
 
     public IUnit getBaseUnit() {
