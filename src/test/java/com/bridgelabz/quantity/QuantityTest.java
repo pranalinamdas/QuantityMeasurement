@@ -366,4 +366,12 @@ class QuantityTest {
 
         assertEquals(Quantity.createLiter(11.34), zeroGallon.add(fourPointSevenEightLiters));
     }
+
+    @Test
+    void givenZeroGramsAndZeroGrams_whenCheckEquals_thenTheyShouldBeEqual(){
+        Quantity zeroGram = Quantity.createGrams(0);
+        Quantity anotherZeroGram = Quantity.createGrams(0);
+
+        assertEquals(zeroGram, anotherZeroGram);
+    }
 }

@@ -1,4 +1,7 @@
-package com.bridgelabz.quantity;
+package com.bridgelabz.quantity.Length;
+
+import com.bridgelabz.quantity.IUnit;
+import com.bridgelabz.quantity.Quantity;
 
 public class Feet implements IUnit {
 

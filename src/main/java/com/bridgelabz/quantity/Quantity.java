@@ -1,5 +1,12 @@
 package com.bridgelabz.quantity;
 
+import com.bridgelabz.quantity.Length.Feet;
+import com.bridgelabz.quantity.Length.Inch;
+import com.bridgelabz.quantity.Length.Yard;
+import com.bridgelabz.quantity.Volume.Gallon;
+import com.bridgelabz.quantity.Volume.Liter;
+import com.bridgelabz.quantity.Weight.Grams;
+
 public class Quantity {
     private double value;
     IUnit unit;
@@ -22,6 +29,10 @@ public class Quantity {
 
     public static Quantity createGallon(double value) {
         return new Quantity(value, new Gallon());
+    }
+
+    public static Quantity createGrams(double value){
+        return new Quantity(value, new Grams());
     }
 
     public Quantity(double value, IUnit unit) {
@@ -62,7 +73,7 @@ public class Quantity {
         return new Quantity(unit.convertToBase(this.value) + other.unit.convertToBase(other.value), unit.getBaseUnit());
     }
 
-    IUnit getBaseUnit() {
+    public IUnit getBaseUnit() {
         return unit.getBaseUnit();
     }
 }

@@ -1,6 +1,9 @@
-package com.bridgelabz.quantity;
+package com.bridgelabz.quantity.Volume;
 
-public class Inch implements IUnit {
+import com.bridgelabz.quantity.IUnit;
+import com.bridgelabz.quantity.Quantity;
+
+public class Liter implements IUnit {
 
     private final double converter = 1;
 
@@ -10,8 +13,8 @@ public class Inch implements IUnit {
     }
 
     @Override
-    public Inch getBaseUnit() {
-        return new Inch();
+    public Liter getBaseUnit() {
+        return new Liter();
     }
 
     @Override
@@ -21,11 +24,11 @@ public class Inch implements IUnit {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Inch;
+        return obj instanceof Liter;
     }
 
     @Override
     public String toString() {
-        return "Inch";
+        return "Liter";
     }
 }
