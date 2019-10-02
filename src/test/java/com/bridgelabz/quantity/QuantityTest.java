@@ -423,4 +423,12 @@ class QuantityTest {
 
         assertEquals(Quantity.createGrams(0.0), zeroGram.add(anotherZeroGram));
     }
+
+    @Test
+    void givenOneGramsAndOneGrams_whenAdd_thenShouldBeTwo() throws Exception {
+        Quantity oneGram = Quantity.createGrams(1);
+        Quantity anotherOneGram = Quantity.createGrams(1);
+
+        assertEquals(Quantity.createGrams(2.0), oneGram.add(anotherOneGram));
+    }
 }
