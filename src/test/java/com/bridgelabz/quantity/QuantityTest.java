@@ -486,4 +486,12 @@ class QuantityTest {
 
         assertNotEquals(zeroFahrenheit, oneFahrenheit);
     }
+
+    @Test
+    void givenOneFahrenheitAndZeroFahrenheit_whenCheckEquals_ThenShouldBeEqual(){
+        Quantity oneFahrenheit = Quantity.createFahrenheit(1);
+        Quantity anotherOneFahrenheit = Quantity.createFahrenheit(1);
+
+        assertEquals(oneFahrenheit, anotherOneFahrenheit);
+    }
 }
